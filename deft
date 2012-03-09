@@ -1,0 +1,6 @@
+# name: deftest
+# key: deft
+# --
+(deftest $1
+    (is (= $2)))
+  $0)

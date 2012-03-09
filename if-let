@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+# name: if-let
+# key: if-let
+# --
+(if-let [$1 $2]
+  $3)
+$0
