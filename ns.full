@@ -14,6 +14,5 @@
                 (setq aftersrc t))))
      (when nsname
        (replace-regexp-in-string "_" "-" (substring (apply 'concat (reverse nsname))  0 -5))))`
-     (:use $1)
-     (:require ))
+     (:require $1))
 $0
