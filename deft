@@ -1,6 +1,8 @@
-# name: deftest
+# name: deftype
 # key: deft
 # --
-(deftest $1
-    (is (= $2)))
-  $0)
+(deftype
+  ^{"$1"}$>
+  $2$>
+  [$3]$>
+  $0)$>

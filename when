@@ -2,5 +2,6 @@
 # name: when
 # key: when
 # --
-(when $1 $2)
-$0
+(when $1
+      $2)$>
+$0$>

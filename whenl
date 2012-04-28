@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# name: when-let
-# key: when-let
+# name: whenl
+# key: whenl
 # --
 (when-let [$1 $2]
-  $3)
-$0
+  $3)$>
+  $0$>

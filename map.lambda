@@ -2,4 +2,4 @@
 # name: map lambda
 # key: map
 # --
-(map #($1) $2)
+(map #($1) $2)$>
