@@ -3,5 +3,5 @@
 # --
 (try
 $1$>
-(catch ${2:Exception} e$b>
+(catch ${2:Exception} e$>
 $3$>))$>
