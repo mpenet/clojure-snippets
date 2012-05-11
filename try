@@ -2,7 +2,6 @@
 # key: try
 # --
 (try $0
-$1 $>
-(catch ${2:Exception} e $>
-$3 $>
-))$>
+$1$>
+(catch ${2:Exception} e$>
+$3$>))$>
