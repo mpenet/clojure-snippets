@@ -18,5 +18,6 @@
                 (setq aftersrc t))))
      (when nsname
        (replace-regexp-in-string "_" "-"
-       (substring (apply 'concat (reverse nsname)) 0
+       (substring (apply 'concat (reverse nsname))
+                  0
                   (* -1 (+ 2 (length (file-name-extension (buffer-file-name)))))))))`)
