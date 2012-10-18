@@ -1,4 +1,4 @@
 # name: import
 # key: import
 # --
-(:import [$1])
+(:import [$1])$>
