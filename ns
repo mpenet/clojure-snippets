@@ -2,10 +2,6 @@
 # name: ns
 # key: ns
 # --
-# -*- coding: utf-8 -*-
-# name: ns
-# key: ns
-# --
 (ns `(let* ((nsname '())
         (dirs (split-string (buffer-file-name) "/"))
         (aftersrc nil))
