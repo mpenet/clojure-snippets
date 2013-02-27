@@ -4,6 +4,8 @@
 
 ;; Author: Max Penet <m@qbits.cc>
 ;; Keywords: snippets
+;; Version: 1.0.0
+
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,3 +30,5 @@
 (yas-load-directory (expand-file-name "snippets" clojure-snippets-root))
 
 (provide 'clojure-snippets)
+
+;;; clojure-snippets.el ends here
