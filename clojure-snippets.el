@@ -5,7 +5,7 @@
 ;; Author: Max Penet <m@qbits.cc>
 ;; Keywords: snippets
 ;; Version: 1.0.0
-
+;; Package-Requires: ((yasnippet "0.8.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,12 +22,18 @@
 
 ;;; Code:
 
-;; Find clojure-snippets root directory
-(setq clojure-snippets-root (file-name-directory
-                             (or (buffer-file-name) load-file-name)))
+(setq clojure-snippets-dir (file-name-directory
+                            (or (buffer-file-name) load-file-name)))
 
-;; Load snippets
-(yas-load-directory (expand-file-name "snippets" clojure-snippets-root))
+;;;###autoload
+(defun clojure-snippets-initialize ()
+  (yas-load-directory (expand-file-name "snippets" clojure-snippets-dir)))
+
+;;;###autoload
+(eval-after-load 'yasnippet
+   '(clojure-snippets-initialize))
+
+(require 'yasnippet)
 
 (provide 'clojure-snippets)
 
