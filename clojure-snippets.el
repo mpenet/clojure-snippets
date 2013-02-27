@@ -28,8 +28,8 @@
 ;;;###autoload
 (defun clojure-snippets-initialize ()
   (let ((snip-dir (expand-file-name "snippets" clojure-snippets-dir)))
-    (setq yas-snippet-dirs (cons snip-dir yas-snippet-dirs))
-    (yas-load-directory snip-dir)))
+    (add-to-list 'yas-snippet-dirs snip-dir)
+    (yas-load-directory yas-snippet-dirs)))
 
 ;;;###autoload
 (eval-after-load 'yasnippet
