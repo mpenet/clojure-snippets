@@ -1,4 +1,4 @@
-# yasnippets for Clojure
+# clojure-snippets
 
 ### package.el installation via MELPA
 
