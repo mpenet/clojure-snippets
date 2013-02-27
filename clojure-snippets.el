@@ -35,6 +35,8 @@
 (eval-after-load 'yasnippet
    '(clojure-snippets-initialize))
 
+(require 'yasnippet)
+
 (provide 'clojure-snippets)
 
 ;;; clojure-snippets.el ends here
