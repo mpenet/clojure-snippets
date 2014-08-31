@@ -2,18 +2,21 @@
 # name: ns
 # key: ns
 # --
-(ns `(let* ((nsname '())
-        (dirs (split-string (buffer-file-name) "/"))
-        (aftersrc nil))
-     (dolist (dir dirs)
-        (if aftersrc
-            (progn
-                (setq nsname (cons dir nsname))
-                (setq nsname (cons "." nsname)))
-             (when (or (string= dir "src") (string= dir "test"))
-                (setq aftersrc t))))
-     (when nsname
-       (replace-regexp-in-string "_" "-"
-       (substring (apply 'concat (reverse nsname))
-                  0
-                  (* -1 (+ 2 (length (file-name-extension (buffer-file-name)))))))))`)
+(ns `(flet ((try-src-prefix
+	  (path src-pfx)
+	  (let ((parts (split-string path src-pfx)))
+	    (if (= 2 (length parts))
+		(second parts)
+	      nil))))
+    (let* ((p (buffer-file-name))
+           (p2 (first
+		(remove-if-not '(lambda (x) x)
+			       (mapcar
+				'(lambda (pfx)
+				   (try-src-prefix p pfx))
+				'("/src/cljs/" "/src/clj/" "/src/")))))
+	   (p3 (file-name-sans-extension p2))
+	   (p4 (mapconcat '(lambda (x) x)
+		 (split-string p3 "/")
+		 ".")))
+      (replace-regexp-in-string "_" "-" p4)))`)
