@@ -2,15 +2,15 @@
 # name: ns
 # key: ns
 # --
-(ns `(flet ((try-src-prefix
+(ns `(cl-flet ((try-src-prefix
 	  (path src-pfx)
 	  (let ((parts (split-string path src-pfx)))
 	    (if (= 2 (length parts))
-		(second parts)
+		(cl-second parts)
 	      nil))))
     (let* ((p (buffer-file-name))
-           (p2 (first
-		(remove-if-not '(lambda (x) x)
+           (p2 (cl-first
+		(cl-remove-if-not '(lambda (x) x)
 			       (mapcar
 				'(lambda (pfx)
 				   (try-src-prefix p pfx))
