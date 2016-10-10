@@ -38,3 +38,7 @@ marking, press x, and ELPA will install the packages for you (under
 ~/.emacs.d/elpa/).
 
 * or using <kbd>M-x package-install clojure-snippets
+
+# License
+
+clojure-snippets is licensed under GNU GPLv3
